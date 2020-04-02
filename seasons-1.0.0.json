@@ -54,6 +54,9 @@
           "name": {
             "type": "string"
           }
+        },
+        "example": {
+          "name": "1920"
         }
       },
       
