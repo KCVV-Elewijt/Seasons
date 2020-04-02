@@ -1,0 +1,62 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Seasons",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://example.com"
+    }
+  ],
+  "paths": {
+    "/seasons": {
+      "get": {
+        "summary": "List of all known seasons",
+        "operationId": "listSeasons",
+        "tags": [
+          "season"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of all seasons",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Season"
+                  }
+                },
+                "example": [
+                  { 
+                    "name": "1920" 
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Season": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      
+    }
+  }
+}
